@@ -17,7 +17,7 @@ class ImageBannerWidget : AppWidgetProvider() {
 
     companion object {
 
-        private const val TOAST_ACTION = "com.bima.mystackwidget.TOAS_ACTION"
+        private const val TOAST_ACTION = "com.bima.mystackwidget.TOAST_ACTION"
         const val EXTRA_ITEM = "com.bima.mystackwidget.EXTRA_ITEM"
 
         //pindahkan fungsi ini ke companion object, karena kita akan memanggil fungsi ini dari luar kelas
@@ -73,18 +73,4 @@ class ImageBannerWidget : AppWidgetProvider() {
             }
         }
     }
-}
-
-internal fun updateAppWidget(
-    context: Context,
-    appWidgetManager: AppWidgetManager,
-    appWidgetId: Int
-) {
-    val widgetText = context.getString(R.string.appwidget_text)
-    // Construct the RemoteViews object
-    val views = RemoteViews(context.packageName, R.layout.image_banner_widget)
-    views.setTextViewText(R.id.appwidget_text, widgetText)
-
-    // Instruct the widget manager to update the widget
-    appWidgetManager.updateAppWidget(appWidgetId, views)
 }
