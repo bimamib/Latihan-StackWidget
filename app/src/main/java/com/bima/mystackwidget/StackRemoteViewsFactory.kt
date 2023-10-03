@@ -16,6 +16,7 @@ internal class StackRemoteViewsFactory(private val mContext: Context) : RemoteVi
     }
 
     override fun onDataSetChanged() {
+        //Ini berfungsi untuk melakukan refresh saat terjadi perubahan.
         mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.darth_vader))
         mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.star_wars_logo))
         mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.storm_trooper))
